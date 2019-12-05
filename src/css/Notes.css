@@ -1,0 +1,10 @@
+.notes table {
+    padding: 10px;
+    color: blue;
+    font-size: 1em;
+    border-collapse: collapse;
+}
+
+.notes td {
+    border:1px solid #ccc;
+}
