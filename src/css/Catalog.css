@@ -1,0 +1,10 @@
+.catalog {
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+}
+
+.catalog .book {
+    max-width:300px;
+    padding-top:50px;
+}
