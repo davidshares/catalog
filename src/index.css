@@ -11,3 +11,38 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.book {
+  border:2px solid #eee;
+  border-radius:3px;
+  padding:10px;
+  margin:10px;
+  text-align:center;
+}
+
+.book strong {
+  margin:6px 0px;
+  display:block;
+  color:#B12704;
+}
+
+.book p {
+  float:left;
+  margin-top:5px;
+  margin-left:40px;
+}
+
+span#stock {
+  color:#007600
+}
+
+.azbutton {
+  border:2px solid #000;
+  padding:10px;
+  background:orange;
+  margin-left:65px;
+}
+
+p button:hover {
+  cursor:pointer;
+}

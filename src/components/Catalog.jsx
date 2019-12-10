@@ -6,29 +6,7 @@ class Catalog extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            books: [
-                {
-                    title: 'Milkman: A Novel',
-                    author: 'Anna Burns',
-                    amazonImage: 'https://images-na.ssl-images-amazon.com/images/I/41eOX0cBT8L._SX331_BO1,204,203,200_.jpg',
-                    amazonUrl: 'https://www.amazon.com/dp/1644450003',
-                    price: 7.99
-                },
-                {
-                    title: 'Feel Free: Essays',
-                    author: 'Zadie Smith',
-                    amazonImage: 'https://images-na.ssl-images-amazon.com/images/I/51NLFKhZnIL._SX327_BO1,204,203,200_.jpg',
-                    amazonUrl: 'https://www.amazon.com/dp/1594206252',
-                    price: 16.16
-                },
-                {
-                    title: 'There There: A novel',
-                    author: 'Tommy Orange',
-                    amazonImage: 'https://images-na.ssl-images-amazon.com/images/I/51RuAbKH%2BtL._SX326_BO1,204,203,200_.jpg',
-                    amazonUrl: 'https://www.amazon.com/dp/0525520376',
-                    price: 11.46
-                }
-            ]
+
         }
     }
 
@@ -44,12 +22,22 @@ class Catalog extends React.Component {
             {/* List of Book titles below */}
 
                 {
-                    books.map(book => {
+                    this.props.books.map((book, i) => {
                         return <div
                             className="book"
                             key={book.amazonUrl}
                             >
-                            <i>{book.title}</i> by {book.author} is <strong>${book.price}</strong>
+
+                            <a href={book.amazonUrl}><i>{book.title}</i> by {book.author}</a><br />
+                            <p>Buy New <span id="stock">(In Stock)</span></p>
+                            <strong>Price: ${book.price}</strong><br />
+                            <a target="_blank" href={book.amazonImage}>
+                                <img src={book.amazonImage} width="50%" title={book.title + ' (click image to view full size)'} alt={book.title} />
+                            </a><br />
+
+                            <p>
+                                <button class="azbutton" id={book.id} onClick={this.props.addToCart}>Add to Cart</button>
+                            </p>
                         </div>
                     })
                 }
